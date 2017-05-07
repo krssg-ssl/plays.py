@@ -11,10 +11,6 @@ class Play(object):
 		self.time_out   = time_out
 		self.begin_time = int(round(time.time() * 1000))
 
-	# role list of tactics
-
-	role_list = 
-
 
 	def timed_out(self):
 		"""
