@@ -1,4 +1,4 @@
-import ctypes
+from ctypes import *
 
 """
 -> define one separate class for each of the tactics parameters
