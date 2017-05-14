@@ -6,8 +6,6 @@ from ctypes import *
 -> finally create an union of all the above classes
 """
 
-# TODO : Complete the remaining tactic parameters from 'tactics/tactics.h' file
-
 class GoalieP(Structure):
 	_fields_ = []
 
