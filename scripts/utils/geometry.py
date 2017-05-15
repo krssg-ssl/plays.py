@@ -1,21 +1,24 @@
 # implement the helper functions similar to 'ssl_common/geometry.hpp'
 import math
+from ctypes import *
 
 PI = 3.14159265358979323
 INF = 9999999
 
-class Vector2D:
-	def __init__(self,x,y):
-		self.x = x
-		self.y = y
+class Vector2D(Structure):
+	
+	_fields_ =	[ ("x", c_int),
+			  ("y", c_int) ]
 
-	def __init__(self,v):
-		self.x = v.x
-		self.y = v.y
-
-	def __init__(self):
-		self.x = INF
-		self.y = INF
+	def __init__(self,x = None,y = None):
+		if x is None:
+			self.x = self.y = INF
+		elif type(x) is Vector2D:
+			self.x, self.y = x.x, x.y
+		elif type(x) is int and type(y) is int:
+			self.x, self.y = x, y
+		else:
+			raise Exception("Invalid constructor")
 
 	def valid(self):
 		if math.abs(self.x) == INF or math.abs(self.y) == INF :
