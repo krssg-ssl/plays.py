@@ -1,4 +1,6 @@
 # Includes all the global parameters as in 'ssl_common/conig.h'
+SIM_COMM = True
+GR_SIM_COMM = True
 
 def SELECT(sim_param, ssl_param):
     if SIM_COMM or GR_SIM_COMM:       #Parameters for the simulator
