@@ -158,78 +158,78 @@ class role_node(object):
 			if self.state.homeDetected[idx]==True:
 				self.detected += 1
 
-		##self.print_belief_state()
-		tac_1 = self.tactic_instance(1, self.role_list[0][0], self.role_list[0][1])		
-		tac_1.updateParams(self.state)
-		tac_1.execute(self.state, self.pub)
+		# self.print_belief_state()
+		# tac_1 = self.tactic_instance(1, self.role_list[0][0], self.role_list[0][1])
+		# tac_1.updateParams(self.state)
+		# tac_1.execute(self.state, self.pub)
 
-		# # Begin all the threads for the first time, this is true only at 't=0'
-		# if self.begin:
-		# 	print 'Initializing instances...'
+		# Begin all the threads for the first time, this is true only at 't=0'
+		if self.begin:
+			print 'Initializing instances...'
 
-		# 	# TODO : Update the role list here
-		# 	self.update_rolelist(-1, 0)
+			# TODO : Update the role list here
+			self.update_rolelist(-1, 0)
 
-		# 	tac_0 = self.tactic_instance(0, self.role_list[0][0], self.role_list[0][1])		
-		# 	# tac_1 = self.tactic_instance(1, self.role_list[1][0], self.role_list[1][1])		
-		# 	# tac_2 = self.tactic_instance(2, self.role_list[2][0], self.role_list[2][1])		
-		# 	# tac_3 = self.tactic_instance(3, self.role_list[3][0], self.role_list[3][1])		
-		# 	# tac_4 = self.tactic_instance(4, self.role_list[4][0], self.role_list[4][1])		
-		# 	# tac_5 = self.tactic_instance(5, self.role_list[5][0], self.role_list[5][1])		
-
-
-		# 	self.tactic_0 = threading.Thread(name="robot_0", target=self.update_execute, args=(tac_0, ))
-		# 	# self.tactic_1 = threading.Thread(name="robot_1", target=self.update_execute, args=(tac_1, ))
-		# 	# self.tactic_2 = threading.Thread(name="robot_2", target=self.update_execute, args=(tac_2, ))
-		# 	# self.tactic_3 = threading.Thread(name="robot_3", target=self.update_execute, args=(tac_3, ))
-		# 	# self.tactic_4 = threading.Thread(name="robot_4", target=self.update_execute, args=(tac_4, ))
-		# 	# self.tactic_5 = threading.Thread(name="robot_5", target=self.update_execute, args=(tac_5, ))
+			tac_0 = self.tactic_instance(0, self.role_list[0][0], self.role_list[0][1])
+			tac_1 = self.tactic_instance(1, self.role_list[1][0], self.role_list[1][1])
+			tac_2 = self.tactic_instance(2, self.role_list[2][0], self.role_list[2][1])
+			tac_3 = self.tactic_instance(3, self.role_list[3][0], self.role_list[3][1])
+			tac_4 = self.tactic_instance(4, self.role_list[4][0], self.role_list[4][1])
+			tac_5 = self.tactic_instance(5, self.role_list[5][0], self.role_list[5][1])
 
 
-		# # Check if tactic is completed and update the instance accordingly
-		# if self.Tactic_0:
-		# 	self.Tactic_0 = False
-		# 	tac_0 = self.tactic_instance(0, self.role_list[0][0], self.role_list[0][1])		
-		# 	self.tactic_0 = threading.Thread(name="robot_0", target=self.update_execute, args=(tac_0))
+			self.tactic_0 = threading.Thread(name="robot_0", target=self.update_execute, args=(tac_0, ))
+			self.tactic_1 = threading.Thread(name="robot_1", target=self.update_execute, args=(tac_1, ))
+			self.tactic_2 = threading.Thread(name="robot_2", target=self.update_execute, args=(tac_2, ))
+			self.tactic_3 = threading.Thread(name="robot_3", target=self.update_execute, args=(tac_3, ))
+			self.tactic_4 = threading.Thread(name="robot_4", target=self.update_execute, args=(tac_4, ))
+			self.tactic_5 = threading.Thread(name="robot_5", target=self.update_execute, args=(tac_5, ))
 
-		# # if self.Tactic_1:
-		# # 	self.Tactic_1 = False
-		# # 	tac_1 = self.tactic_instance(1, self.role_list[1][0], self.role_list[1][1])		
-		# # 	self.tactic_1 = threading.Thread(name="robot_1", target=self.update_execute, args=(tac_1))
 
-		# # if self.Tactic_2:
-		# # 	self.Tactic_2 = False
-		# # 	tac_2 = self.tactic_instance(2, self.role_list[2][0], self.role_list[2][1])		
-		# # 	self.tactic_2 = threading.Thread(name="robot_2", target=self.update_execute, args=(tac_2))
+		# Check if tactic is completed and update the instance accordingly
+		if self.Tactic_0:
+			self.Tactic_0 = False
+			tac_0 = self.tactic_instance(0, self.role_list[0][0], self.role_list[0][1])
+			self.tactic_0 = threading.Thread(name="robot_0", target=self.update_execute, args=(tac_0, ))
 
-		# # if self.Tactic_3:
-		# # 	self.Tactic_3 = False
-		# # 	tac_3 = self.tactic_instance(3, self.role_list[3][0], self.role_list[3][1])		
-		# # 	self.tactic_3 = threading.Thread(name="robot_3", target=self.update_execute, args=(tac_3))
+		if self.Tactic_1:
+			self.Tactic_1 = False
+			tac_1 = self.tactic_instance(1, self.role_list[1][0], self.role_list[1][1])
+			self.tactic_1 = threading.Thread(name="robot_1", target=self.update_execute, args=(tac_1, ))
 
-		# # if self.Tactic_4:
-		# # 	self.Tactic_4 = False
-		# # 	tac_4 = self.tactic_instance(4, self.role_list[4][0], self.role_list[4][1])		
-		# # 	self.tactic_4 = threading.Thread(name="robot_4", target=self.update_execute, args=(tac_4))
+		if self.Tactic_2:
+			self.Tactic_2 = False
+			tac_2 = self.tactic_instance(2, self.role_list[2][0], self.role_list[2][1])
+			self.tactic_2 = threading.Thread(name="robot_2", target=self.update_execute, args=(tac_2, ))
 
-		# # if self.Tactic_5:
-		# # 	self.Tactic_5 = False
-		# # 	tac_5 = self.tactic_instance(5, self.role_list[5][0], self.role_list[5][1])		
-		# # 	self.tactic_5 = threading.Thread(name="robot_5", target=self.update_execute, args=(tac_5))
+		if self.Tactic_3:
+			self.Tactic_3 = False
+			tac_3 = self.tactic_instance(3, self.role_list[3][0], self.role_list[3][1])
+			self.tactic_3 = threading.Thread(name="robot_3", target=self.update_execute, args=(tac_3, ))
 
-		# # Start the threads
-		# if not self.tactic_0.isAlive():
-		# 	self.tactic_0.start()
-		# # if not self.tactic_1.isAlive():
-		# # 	self.tactic_1.start()
-		# # if not self.tactic_2.isAlive():
-		# # 	self.tactic_2.start()
-		# # if not self.tactic_3.isAlive():
-		# # 	self.tactic_3.start()
-		# # if not self.tactic_4.isAlive():
-		# # 	self.tactic_4.start()
-		# # if not self.tactic_5.isAlive():
-		# # 	self.tactic_5.start()
+		if self.Tactic_4:
+			self.Tactic_4 = False
+			tac_4 = self.tactic_instance(4, self.role_list[4][0], self.role_list[4][1])
+			self.tactic_4 = threading.Thread(name="robot_4", target=self.update_execute, args=(tac_4, ))
+
+		if self.Tactic_5:
+			self.Tactic_5 = False
+			tac_5 = self.tactic_instance(5, self.role_list[5][0], self.role_list[5][1])
+			self.tactic_5 = threading.Thread(name="robot_5", target=self.update_execute, args=(tac_5, ))
+
+		# Start the threads
+		if not self.tactic_0.isAlive():
+			self.tactic_0.start()
+		if not self.tactic_1.isAlive():
+			self.tactic_1.start()
+		if not self.tactic_2.isAlive():
+			self.tactic_2.start()
+		if not self.tactic_3.isAlive():
+			self.tactic_3.start()
+		if not self.tactic_4.isAlive():
+			self.tactic_4.start()
+		if not self.tactic_5.isAlive():
+			self.tactic_5.start()
 
 
 	def node(self):
