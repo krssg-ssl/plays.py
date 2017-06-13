@@ -21,10 +21,10 @@ CENTER_Y                     = SELECT(0, 0)
 HALF_FIELD_MAXX              = SELECT(3000, 2975)   #actual 225 (rugged surace at end)
 HALF_FIELD_MAXY              = SELECT(2000, 2050)
 
-OUR_GOAL_MAXY                = SELECT(500,600)
-OUR_GOAL_MINY                = SELECT(-500, -600)
-OPP_GOAL_MAXY                = SELECT(500, 600)
-OPP_GOAL_MINY                = SELECT(-500, -600)
+OUR_GOAL_MAXY                = SELECT(600,600)
+OUR_GOAL_MINY                = SELECT(-600, -600)
+OPP_GOAL_MAXY                = SELECT(600, 600)
+OPP_GOAL_MINY                = SELECT(-600, -600)
 OUR_GOAL_WIDTH               = OUR_GOAL_MAXY - OUR_GOAL_MINY
 OPP_GOAL_WIDTH               = OPP_GOAL_MAXY - OPP_GOAL_MINY
 CENTER_CIRCLE_DIAMETER       = SELECT(1000,1000)
@@ -53,7 +53,7 @@ KICKOFF_RADIUS             = SELECT(18,200)
 
 BOT_BALL_THRESH            = SELECT(105, 150)                  #mm
 BOT_BALL_THRESH_FOR_PR     = SELECT(105, 200)                  #mm
-BOT_POINT_THRESH           = SELECT(10, 147)                   #mm
+BOT_POINT_THRESH           = SELECT(105, 147)                   #mm
 
 STRIP_WIDTH_X              = BOT_RADIUS*1.5
 STRIP_WIDTH_Y              = BOT_RADIUS*1.5
@@ -65,14 +65,14 @@ MAX_BOT_LINEAR_VEL_CHANGE  = SELECT(10, 3)
 FF = 1.0
 
 MAX_BOT_SPEED              = SELECT(1800*FF, 80.0*FF)           #mm
-MAX_BALL_SPEED             = SELECT(3600, 160.0)                #mm/s
-MIN_BOT_SPEED              = SELECT(3, 30)                      #mm/s
+MIN_BOT_SPEED              = SELECT(5, 30)                      #mm/s
 MAX_BOT_OMEGA              = SELECT(7, 100)                     #rad/s//2
-MIN_BOT_OMEGA              = SELECT(1, 0.15)                    #rad/s
+MIN_BOT_OMEGA              = SELECT(0.15,0.15)                    #rad/s
 MAX_BACK_DRIBBLE_V_Y       = SELECT(500, 500)                   #mm/s
 MAX_FRONT_DRIBBLE_V_Y      = SELECT(1200, 1200)                 #mm/s
 MAX_DRIBBLE_V_X            = SELECT(200, 100)                   #mm/s
-MAX_DRIBBLE_R              = SELECT(3, 3)                       #rad
+MAX_DRIBBLE_R              = SELECT(30, 3)                       #rad
+MAX_BALL_SPEED             = SELECT(20, 6)                #mm/s
 DRIBBLER_BALL_ANGLE_RANGE  = SELECT(0.2, 0.10)                  #rad
 SATISFIABLE_THETA          = SELECT(0.08, 0.1)                  #rad
 SATISFIABLE_THETA_SHARP    = SELECT(0.01, 0.01)                 #rad

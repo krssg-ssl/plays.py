@@ -52,7 +52,7 @@ class Vector2D(Structure):
 
 	# Returns the angle made by the vector (head - self) in the range -pi to pi
 	def angle(self,head):
-		return math.atan2(head.y-self.y,head.x-self.x)
+		return math.atan2(self.y-head.y,self.x-head.x)
 
 	# Returns the Eucledian distance between the 2 vectors
 	def dist(self,another_point):
